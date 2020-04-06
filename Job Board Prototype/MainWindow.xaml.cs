@@ -28,5 +28,12 @@ namespace Job_Board_Prototype
         {
             InitializeComponent();
         }
+
+
+        private void listBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            ListBox listBox = sender as ListBox;
+            listBox.SelectedItem = null;
+        }
     }
 }

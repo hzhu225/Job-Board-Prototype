@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         Title="Job Board Prototype" Height="800" Width="1440" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid x:Name="baseGrid" Background="#FFF0F0F0">
-        <Label x:Name="unassigned_Label" Content="UNASSIGNED" HorizontalAlignment="Left" Margin="12,17,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Height="27" Width="110"/>
-        <Label x:Name="uasFW_Label" Content="Field Work" HorizontalAlignment="Left" Margin="20,49,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" FontStyle="Italic" Background="#FFFF9F9F" Width="100" Height="27"/>
-        <ListBox x:Name="uasFW_listBox" HorizontalAlignment="Left" Height="127" Margin="20,76,0,0" VerticalAlignment="Top" Width="100" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <Label x:Name="unassigned_Label" Content="UNASSIGNED" HorizontalAlignment="Left" Margin="18,26,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Height="27" Width="110"/>
+        <Label x:Name="uasFW_Label" Content="Field Work" HorizontalAlignment="Left" Margin="23,60,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" FontStyle="Italic" Background="#FFFF9F9F" Width="100" Height="27"/>
+        <ListBox x:Name="uasFW_listBox" HorizontalAlignment="Left" Height="130" Margin="23,87,0,0" VerticalAlignment="Top" Width="100" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" LostFocus="listBox_LostFocus">
             <ListBoxItem Content="16000" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
             <ListBoxItem Content="16001" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
             <ListBoxItem Content="16002" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
@@ -19,117 +19,219 @@
             <ListBoxItem Content="16005" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
         </ListBox>
 
-        <Label x:Name="uasDR_Label" Content="Drafting" HorizontalAlignment="Left" Margin="20,223,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" FontStyle="Italic" Background="#FFA8E7FF" Width="100" Height="27"/>
-        <ListBox x:Name="uasDR_listBox" HorizontalAlignment="Left" Height="88" Margin="20,250,0,0" VerticalAlignment="Top" Width="100" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <Label x:Name="uasDR_Label" Content="Drafting" HorizontalAlignment="Left" Margin="23,237,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" FontStyle="Italic" Background="#FFA8E7FF" Width="100" Height="27"/>
+        <ListBox x:Name="uasDR_listBox" HorizontalAlignment="Left" Height="88" Margin="23,264,0,0" VerticalAlignment="Top" Width="100" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" LostFocus="listBox_LostFocus">
             <ListBoxItem Content="17200" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
-            <ListBoxItem Content="17210" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
+            <ListBoxItem Content="17210D" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
             <ListBoxItem Content="17220" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
-            <ListBoxItem Content="17230A" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
+            <ListBoxItem Content="17230" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
             <ListBoxItem Content="17240" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
         </ListBox>
 
-        <Label x:Name="uasFC_Label" Content="Final Check" HorizontalAlignment="Left" Margin="21,358,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" FontStyle="Italic" Background="#FFF1B129" Width="100" Height="27"/>
-        <ListBox x:Name="uasFC_listBox" HorizontalAlignment="Left" Height="88" Margin="21,385,0,0" VerticalAlignment="Top" Width="100" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <Label x:Name="uasFC_Label" Content="Final Check" HorizontalAlignment="Left" Margin="24,372,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" FontStyle="Italic" Background="#FFF1B129" Width="100" Height="27"/>
+        <ListBox x:Name="uasFC_listBox" HorizontalAlignment="Left" Height="88" Margin="24,399,0,0" VerticalAlignment="Top" Width="100" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" LostFocus="listBox_LostFocus">
             <ListBoxItem Content="18300" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
-            <ListBoxItem Content="18301" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
+            <ListBoxItem Content="18301B" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
             <ListBoxItem Content="18302" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
-            <ListBoxItem Content="18303A" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
+            <ListBoxItem Content="18303" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
         </ListBox>
 
-        <Label x:Name="uasPP_Label" Content="Plot &amp; Purge" HorizontalAlignment="Left" Margin="21,493,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" FontStyle="Italic" Background="#FF64CD59" Width="100" Height="27"/>
-        <ListBox x:Name="uasPP_listBox" HorizontalAlignment="Left" Height="88" Margin="21,520,0,0" VerticalAlignment="Top" Width="100" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListBoxItem Content="18300" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
-            <ListBoxItem Content="18301" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
-            <ListBoxItem Content="18302" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
-            <ListBoxItem Content="18303A" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
+        <Label x:Name="uasPP_Label" Content="Plot &amp; Purge" HorizontalAlignment="Left" Margin="24,507,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" FontStyle="Italic" Background="#FF64CD59" Width="100" Height="27"/>
+        <ListBox x:Name="uasPP_listBox" HorizontalAlignment="Left" Height="88" Margin="24,534,0,0" VerticalAlignment="Top" Width="100" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" LostFocus="listBox_LostFocus">
+            <ListBoxItem Content="19100" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
+            <ListBoxItem Content="19101" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
+            <ListBoxItem Content="19102" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
+            <ListBoxItem Content="19103A" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Cursor="Hand"/>
         </ListBox>
 
-        <Border x:Name="split_Border" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="146,17,0,17" Width="1"/>
+        <Border x:Name="split_Border" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="155,17,0,17" Width="1"/>
 
-        <Border x:Name="surveyors_Border" Height="160" Margin="168,17,10,0" VerticalAlignment="Top" BorderBrush="#FF5D5D5D" BorderThickness="1" CornerRadius="10">
+        <Border x:Name="surveyors_Border" Height="160" Margin="197,40,20,0" VerticalAlignment="Top" BorderBrush="#FF5D5D5D" BorderThickness="1" CornerRadius="10">
             <Grid Margin="0">
                 <Label x:Name="surveyors_Label" Content=" SURVEYORS " HorizontalAlignment="Left" Margin="10,-12,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Padding="2,0,0,0" VerticalContentAlignment="Center" Foreground="#FF00A617" Width="105" Background="#FFF0F0F0"/>
+                <Label x:Name="surveyors_Legend1" Content="Field Work" HorizontalAlignment="Left" Margin="183,-11,0,0" VerticalAlignment="Top" Background="#FFFF9F9F" FontSize="14" FontFamily="Arial"/>
+                <Label x:Name="surveyors_Legend2" Content="Surveyor Checks" HorizontalAlignment="Left" Margin="290,-11,0,0" VerticalAlignment="Top" Background="#FFC993FF" FontSize="14" FontFamily="Arial"/>
 
-                <Label x:Name="Brad_Label" Content="Brad" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Brad_listBox" HorizontalAlignment="Left" Height="88" Margin="10,58,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                <Label x:Name="Brad_Label" Content="Brad" HorizontalAlignment="Left" Margin="20,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Brad_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="20,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                     <ListBoxItem Content="16010" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                     <ListBoxItem Content="16011" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                 </ListBox>
 
-                <Label x:Name="Pat_Label" Content="Pat" HorizontalAlignment="Left" Margin="127,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Pat_listBox" HorizontalAlignment="Left" Height="88" Margin="127,58,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal">
+                <Label x:Name="Pat_Label" Content="Pat" HorizontalAlignment="Left" Margin="137,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Pat_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="137,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                     <ListBoxItem Content="16012" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                     <ListBoxItem Content="16013" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                 </ListBox>
 
-                <Label x:Name="Luke_Label" Content="Luke" HorizontalAlignment="Left" Margin="244,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Luke_listBox" HorizontalAlignment="Left" Height="88" Margin="244,58,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal">
+                <Label x:Name="Luke_Label" Content="Luke" HorizontalAlignment="Left" Margin="254,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Luke_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="254,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                     <ListBoxItem Content="16014" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                     <ListBoxItem Content="16015" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
-                    <ListBoxItem Content="16016" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFA8E7FF" Cursor="Hand"/>
-                    <ListBoxItem Content="16017" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
-                </ListBox>
-
-                <Label x:Name="Ben_Label" Content="Ben" HorizontalAlignment="Left" Margin="361,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Ben_listBox" HorizontalAlignment="Left" Height="88" Margin="361,58,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal">
+                    <ListBoxItem Content="16016B" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFC993FF" Cursor="Hand"/>
+                    <ListBoxItem Content="16017" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFC993FF" Cursor="Hand"/>
                     <ListBoxItem Content="16018" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFC993FF" Cursor="Hand"/>
-                    <ListBoxItem Content="16019" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                 </ListBox>
 
-                <Label x:Name="Hayden_Label" Content="Hayden" HorizontalAlignment="Left" Margin="478,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Hayden_listBox" HorizontalAlignment="Left" Height="88" Margin="478,58,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal">
+                <Label x:Name="Ben_Label" Content="Ben" HorizontalAlignment="Left" Margin="371,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Ben_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="371,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="16018" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFC993FF" Cursor="Hand"/>
+                    <ListBoxItem Content="16019C" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
+                </ListBox>
+
+                <Label x:Name="Hayden_Label" Content="Hayden" HorizontalAlignment="Left" Margin="488,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Hayden_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="488,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                     <ListBoxItem Content="16020" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
-                    <ListBoxItem Content="16021" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                    <ListBoxItem Content="16021" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFC993FF" Cursor="Hand"/>
                 </ListBox>
 
-                <Label x:Name="Brisby_Label" Content="Brisby" HorizontalAlignment="Left" Margin="595,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Brisby_listBox" HorizontalAlignment="Left" Height="88" Margin="595,56,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal">
+                <Label x:Name="Brisby_Label" Content="Brisby" HorizontalAlignment="Left" Margin="605,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Brisby_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="605,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                     <ListBoxItem Content="16022" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                 </ListBox>
 
-                <Label x:Name="Mick_Label" Content="Mick" HorizontalAlignment="Left" Margin="712,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Mick_listBox" HorizontalAlignment="Left" Height="88" Margin="712,58,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal">
+                <Label x:Name="Mick_Label" Content="Mick" HorizontalAlignment="Left" Margin="722,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Mick_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="722,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                     <ListBoxItem Content="16023" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFC993FF" Cursor="Hand"/>
                     <ListBoxItem Content="16024" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                 </ListBox>
 
-                <Label x:Name="Nick_Label" Content="Nick" HorizontalAlignment="Left" Margin="829,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Nick_listBox" HorizontalAlignment="Left" Height="88" Margin="829,58,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal">
-
+                <Label x:Name="Nick_Label" Content="Nick" HorizontalAlignment="Left" Margin="839,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Nick_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="839,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                 </ListBox>
 
-                <Label x:Name="Tim_Label" Content="Tim" HorizontalAlignment="Left" Margin="946,35,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Tim_listBox" HorizontalAlignment="Left" Height="88" Margin="946,56,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal">
+                <Label x:Name="Tim_Label" Content="Tim" HorizontalAlignment="Left" Margin="956,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Tim_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="956,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                     <ListBoxItem Content="16025" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
                 </ListBox>
             </Grid>
         </Border>
 
 
-        <Border x:Name="draftsmen_Border" Height="160" Width="364" Margin="168,200,0,0"  VerticalAlignment="Top" BorderBrush="#FF5D5D5D" BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10">
+        <Border x:Name="draftsmen_Border" Height="160" Width="445" Margin="197,255,0,0"  VerticalAlignment="Top" BorderBrush="#FF5D5D5D" BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10">
             <Grid  Margin="0">
-                <Label x:Name="CReed" Content="Chris Reed" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="CReed_listBox" HorizontalAlignment="Left" Height="88" Margin="10,33,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <Label x:Name="draftsmen_Label" Content=" DRAFTSMEN " HorizontalAlignment="Left" Margin="10,-12,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Padding="2,0,0,0" VerticalContentAlignment="Center" Foreground="#FF00A617" Width="105" Background="#FFF0F0F0"/>
+                <Label x:Name="draftsmen_Legend1" Content="Drafting" HorizontalAlignment="Left" Margin="145,-12,0,0" VerticalAlignment="Top" Background="#FFA8E7FF" FontSize="14" FontFamily="Arial"/>
+                <Label x:Name="draftsmen_Legend2" Content="Redups" HorizontalAlignment="Left" Margin="231,-12,0,0" VerticalAlignment="Top" Background="#FFFD56F6" FontSize="14" FontFamily="Arial"/>
+                <Label x:Name="draftsmen_Legend3" Content="Plot &amp; Purge" HorizontalAlignment="Left" Margin="312,-12,0,0" VerticalAlignment="Top" Background="#FF64CD59" FontSize="14" FontFamily="Arial"/>
+
+                <Label x:Name="CReed_Label" Content="Chris Reed" HorizontalAlignment="Left" Margin="20,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="CReed_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="20,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
                     <ListBoxItem Content="17300" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFA8E7FF" Cursor="Hand"/>
                     <ListBoxItem Content="17301" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFA8E7FF" Cursor="Hand"/>
-                    <ListBoxItem Content="17301" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFA8E7FF" Cursor="Hand"/>
+                    <ListBoxItem Content="17302" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FF64CD59" Cursor="Hand"/>
                 </ListBox>
 
-                <Label x:Name="Gonzo_Label" Content="Gonzo" HorizontalAlignment="Left" Margin="127,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Gonzo_listBox" HorizontalAlignment="Left" Height="88" Margin="127,33,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListBoxItem Content="16012" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
-                    <ListBoxItem Content="16013" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
+                <Label x:Name="Gonzo_Label" Content="Gonzo" HorizontalAlignment="Left" Margin="137,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Gonzo_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="137,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="17303" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFA8E7FF" Cursor="Hand"/>
+                    <ListBoxItem Content="17304" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFD56F6" Cursor="Hand"/>
                 </ListBox>
 
-                <Label x:Name="Allan_Label" Content="Allan" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
-                <ListBox x:Name="Allan_listBox" HorizontalAlignment="Left" Height="88" Margin="244,33,0,0" VerticalAlignment="Top" Width="88" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListBoxItem Content="16014" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
-                    <ListBoxItem Content="16015" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
-                    <ListBoxItem Content="16016" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFA8E7FF" Cursor="Hand"/>
-                    <ListBoxItem Content="16017" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                <Label x:Name="Allan_Label" Content="Allan" HorizontalAlignment="Left" Margin="254,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Allan_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="254,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="17305" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFD56F6" Cursor="Hand"/>
+                    <ListBoxItem Content="17306" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFA8E7FF" Cursor="Hand"/>
+                </ListBox>
+            </Grid>
+        </Border>
+
+
+        <Border x:Name="registered_Border" Height="160" Margin="699,255,20,0"  VerticalAlignment="Top" BorderBrush="#FF5D5D5D" BorderThickness="1" CornerRadius="10">
+            <Grid  Margin="0">
+                <Label x:Name="registered_Label" Content=" REGISTERED SURVEYORS " HorizontalAlignment="Left" Margin="10,-12,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Padding="2,0,0,0" VerticalContentAlignment="Center" Foreground="#FF00A617" Background="#FFF0F0F0"/>
+                <Label x:Name="registered_Legend1" Content="Field Work" HorizontalAlignment="Left" Margin="312,-12,0,0" VerticalAlignment="Top" Background="#FFFF9F9F" FontSize="14" FontFamily="Arial"/>
+                <Label x:Name="registered_Legend2" Content="Final Checks" HorizontalAlignment="Left" Margin="421,-11,0,0" VerticalAlignment="Top" Background="#FFF1B129" FontSize="14" FontFamily="Arial"/>
+
+                <Label x:Name="Steve_Label" Content="Steve" HorizontalAlignment="Left" Margin="20,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Steve_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="20,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="18340" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                    <ListBoxItem Content="18341" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                    <ListBoxItem Content="18342" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
                 </ListBox>
 
+                <Label x:Name="SMc_Label" Content="Stuart M" HorizontalAlignment="Left" Margin="137,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="SMc_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="137,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="18343" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                    <ListBoxItem Content="18344" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                </ListBox>
 
+                <Label x:Name="Murray_Label" Content="Murray" HorizontalAlignment="Left" Margin="254,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Murray_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="254,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="18345" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                </ListBox>
+
+                <Label x:Name="James_Label" Content="James" HorizontalAlignment="Left" Margin="371,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="James_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="371,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="18346" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
+                    <ListBoxItem Content="18347A" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                </ListBox>
+
+                <Label x:Name="CLarmour_Label" Content="Chris L" HorizontalAlignment="Left" Margin="488,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="CLarmour_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="488,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="18348" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
+                    <ListBoxItem Content="18349" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFFF9F9F" Cursor="Hand"/>
+                    <ListBoxItem Content="18350" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                </ListBox>
+            </Grid>
+        </Border>
+
+
+
+        <Border x:Name="spatial_Border" Height="160" Width="360" Margin="197,470,0,0"  VerticalAlignment="Top" BorderBrush="#FF5D5D5D" BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10">
+            <Grid  Margin="0">
+                <Label x:Name="spatial_Label" Content=" SPATIAL " HorizontalAlignment="Left" Margin="10,-12,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Padding="2,0,0,0" VerticalContentAlignment="Center" Foreground="#FF00A617" Background="#FFF0F0F0"/>
+                <Label x:Name="spatial_Legend1" Content="Modelling" HorizontalAlignment="Left" Margin="108,-12,0,0" VerticalAlignment="Top" Background="#FFE2E212" FontSize="14" FontFamily="Arial"/>
+                <Label x:Name="spatial_Legend2" Content="Final Checks" HorizontalAlignment="Left" Margin="200,-12,0,0" VerticalAlignment="Top" Background="#FFF1B129" FontSize="14" FontFamily="Arial"/>
+
+                <Label x:Name="Paul_Label" Content="Paul" HorizontalAlignment="Left" Margin="20,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Paul_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="20,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="19200" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFE2E212" Cursor="Hand"/>
+                    <ListBoxItem Content="19201" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                </ListBox>
+
+                <Label x:Name="Ferdaus_Label" Content="Ferdaus" HorizontalAlignment="Left" Margin="137,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Ferdaus_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="137,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="19202" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFE2E212" Cursor="Hand"/>
+                </ListBox>
+            </Grid>
+        </Border>
+
+
+        <Border x:Name="admin_Border" Height="160" Width="360" Margin="629,470,0,0"  VerticalAlignment="Top" BorderBrush="#FF5D5D5D" BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10">
+            <Grid  Margin="0">
+                <Label x:Name="admin_Label" Content=" JOB ADMIN " HorizontalAlignment="Left" Margin="10,-12,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Padding="2,0,0,0" VerticalContentAlignment="Center" Foreground="#FF00A617" Background="#FFF0F0F0"/>
+                <Label x:Name="admin_Legend1" Content="Final Checks" HorizontalAlignment="Left" Margin="151,-11,0,0" VerticalAlignment="Top" Background="#FFF1B129" FontSize="14" FontFamily="Arial"/>
+
+                <Label x:Name="Damon_Label" Content="Damon" HorizontalAlignment="Left" Margin="20,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Damon_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="20,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="19203" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                    <ListBoxItem Content="19204" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                </ListBox>
+
+                <Label x:Name="Alex_Label" Content="Alex" HorizontalAlignment="Left" Margin="137,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Alex_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="137,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="19205" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FFF1B129" Cursor="Hand"/>
+                </ListBox>
+            </Grid>
+        </Border>
+
+
+        <Border x:Name="invoicing_Border" Height="160" Margin="1054,470,20,0"  VerticalAlignment="Top" BorderBrush="#FF5D5D5D" BorderThickness="1" CornerRadius="10">
+            <Grid  Margin="0">
+                <Label x:Name="invoicing_Label" Content=" INVOICING " HorizontalAlignment="Left" Margin="10,-12,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="27" Padding="2,0,0,0" VerticalContentAlignment="Center" Foreground="#FF00A617" Background="#FFF0F0F0"/>
+                <Label x:Name="invoicing_Legend1" Content="Send &amp; Invoice" HorizontalAlignment="Left" Margin="151,-11,0,0" VerticalAlignment="Top" Background="#FF34C5C5" FontSize="14" FontFamily="Arial"/>
+
+                <Label x:Name="Linda_Label" Content="Linda" HorizontalAlignment="Left" Margin="20,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Linda_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="20,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="18700" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FF2EC5C5" Cursor="Hand"/>
+                    <ListBoxItem Content="18701" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FF2EC5C5" Cursor="Hand"/>
+                </ListBox>
+
+                <Label x:Name="Stephanie_Label" Content="Stephanie" HorizontalAlignment="Left" Margin="137,33,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="15" Height="26" Width="88" Padding="2,0,0,0" VerticalContentAlignment="Center"/>
+                <ListBox x:Name="Stephanie_listBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="88" Margin="137,55,0,0" Padding="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontWeight="Normal" LostFocus="listBox_LostFocus">
+                    <ListBoxItem Content="18702" FontFamily="Arial" FontSize="14" HorizontalContentAlignment="Center" Padding="0" Height="21" Background="#FF2EC5C5" Cursor="Hand"/>
+                </ListBox>
             </Grid>
         </Border>
 
